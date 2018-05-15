@@ -7,7 +7,7 @@
     "test": "jest --watchAll",
     "babel-node": "babel-node --presets=env",
     "start-old": "nodemon --exec npm run babel-node -- ./server",
-    "start": "nodemon --watch './**/*' -e ts,tsx --exec 'ts-node' ./index.ts",
+    "start": "nodemon ./index.ts",
     "build-dev": "webpack --env.WEBPACK_ENV dev --mode=development --progress --colors --watch",
     "build-production": "webpack --env.WEBPACK_ENV production --progress --colors",
     "webpack-serve": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
