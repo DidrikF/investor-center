@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "noImplicitAny": true,
+        "outDir": "./serverDist",
+        "sourceMap": true
+    },
+    "include": [
+        "./**/*",
+    ],
+    "exclude": [
+        "frontend/**/*",
+        "node_modules/**/*",
+        "coverage/**/*",
+        "old-server/**/*",
+        "public/**/*",
+    ]
+}

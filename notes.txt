@@ -1,0 +1,80 @@
+// Main Settings config
+module.exports = {
+  entry: [path.resolve(__dirname, './frontend/javascript/app.js'), path.resolve(__dirname, './frontend/sass/app.sass')], 
+  output: {
+    filename: './public/javascript/app.js'
+  },
+  loaders: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      //query: {
+      //  presets: ['es2015', 'stage-2']
+      //}
+    },
+    {
+      test: /\.vue$/,
+      exclude: /node_modules/,
+      loader: 'vue-loader'
+    },
+    /*
+    {
+      test: /\.sass$/,
+      exclude: /node_modules/,
+      loader: ExtractTextPlugin.extract({
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+        }],
+        fallback: 'sass-loader'
+    },
+    */
+  ],
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      handsontable: path.resolve(__dirname, 'node_modules/handsontable-pro')
+    }
+  }
+  /*
+  plugins: [
+    new ExtractTextPlugin('public/css/style.css', {
+      allChunks: true,
+    }),
+  ],
+  node: {
+    fs: 'empty',
+    net: 'empty'
+  }
+  */
+}
+
+/*
+
+
+use: extractSass.extract({
+  use: [{
+      loader: "css-loader"
+  }, {
+      loader: "sass-loader"
+  }],
+  // use style-loader in development
+  fallback: "style-loader"
+})
+
+
+ rules: [{
+  test: /\.scss$/,
+  use: [{
+      loader: "style-loader" // creates style nodes from JS strings
+  }, {
+      loader: "css-loader" // translates CSS into CommonJS
+  }, {
+      loader: "sass-loader" // compiles Sass to CSS
+  }]
+}]
+
+
+*/
